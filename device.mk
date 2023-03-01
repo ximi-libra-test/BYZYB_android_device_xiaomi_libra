@@ -157,9 +157,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
 
-# IR
-PRODUCT_PACKAGES += android.hardware.ir@1.0-service.xiaomi
-
 # IRQ
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
@@ -223,9 +220,6 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
-# Permissions
-PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
@@ -260,11 +254,6 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/sensor_diag.cfg:system/etc/sensor_di
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     sensors.msm8992
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/xiaomi
 
 # System properties
 include $(LOCAL_PATH)/system_prop.mk
@@ -310,3 +299,10 @@ PRODUCT_PACKAGES += \
     readmac \
     wpa_supplicant \
     wpa_supplicant.conf
+    
+# Consumer IR
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-service.xiaomi
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
