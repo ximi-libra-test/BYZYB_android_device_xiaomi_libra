@@ -71,10 +71,7 @@ PRODUCT_PACKAGES += \
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne \
-    libcnefeatureconfig \
-    services-ext
+    libcnefeatureconfig
 
 # Fingerprint
 PRODUCT_COPY_FILES += \
@@ -204,7 +201,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     libc2dcolorconvert \
-    libdivxdrmdecrypt \
     libdrmclearkeyplugin \
     libmm-omxcore \
     libOmxAacEnc \
@@ -213,7 +209,6 @@ PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
     libOmxVdec \
-    libOmxVdecHevc \
     libOmxVenc \
     libstagefrighthw
 
@@ -262,7 +257,6 @@ include $(LOCAL_PATH)/system_prop.mk
 PRODUCT_BOOT_JARS += telephony-ext
 
 PRODUCT_PACKAGES += \
-    qti-telephony-common \
     telephony-ext
 
 # TimeKeep
@@ -293,7 +287,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     ipacm \
     IPACM_cfg.xml \
-    ipacm-diag \
     libqsap_sdk \
     libwpa_client \
     readmac \
