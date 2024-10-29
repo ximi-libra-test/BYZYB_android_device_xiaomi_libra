@@ -128,6 +128,10 @@ TARGET_KERNEL_CLANG_VERSION := external
 # you can even use a clang 21 toolchain here
 TARGET_KERNEL_CLANG_PATH := /tmp/optane/clang
 
+# Kernel Clang Flags
+KERNEL_CC := CC=clang
+override KERNEL_TOOLCHAIN_PREFIX_arm := arm-linux-android-
+
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TARGET_PROVIDES_KEYMASTER := true
