@@ -115,7 +115,12 @@ KERNEL_LTO := full
 TARGET_KERNEL_CONFIG := libra_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/libra
 
-TARGET_KERNEL_CLANG_VERSION := r416183b
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := external
+
+# use external clang
+# you can even use a clang 21 toolchain here
+TARGET_KERNEL_CLANG_PATH := /tmp/optane/clang
 
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
