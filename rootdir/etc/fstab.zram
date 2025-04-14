@@ -1,0 +1,3 @@
+# zram
+/dev/block/zram0             none         swap    defaults     zramsize=50%,max_comp_streams=6,swapprio=10,notrim
+
