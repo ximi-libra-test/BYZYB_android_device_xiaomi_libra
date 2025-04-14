@@ -1,11 +1,29 @@
 #!/vendor/bin/sh
-# Remove useless directories and files
-rm -rf /data/anr /data/audio /data/bootchart /data/gsi /data/incremental /data/lineageos_updates /data/local/traces /data/misc/boottrace /data/misc/dash /data/misc/display /data/misc/dts /data/misc/gcov /data/misc/perfprofd /data/misc/prereboot /data/misc/profman /data/misc/qsee /data/misc/SelfHost /data/misc/snapshotctl_log /data/misc/trace /data/misc/update_engine /data/misc/update_engine_log /data/misc/wmtrace /data/nfc /data/ota /data/ota_package /data/per_boot /data/preloads /data/rollback /data/rollback-observer /data/server_configurable_flags /data/ss /data/ssh /data/system/dropbox /data/system/heapdump /data/system/perfd /data/thermal /data/tombstones /data/vendor/tombstones /data/usf
-rm -rf /data/backup/pending/* /data/data/*/app_webview*/BrowserMetrics/* /data/data/*/cache/* /data/data/*/code_cache/* /data/local/tmp/* /data/media/0/*/.thumbnails/* /data/media/0/Android/data/*/cache/* /data/system/uiderrors.txt /data/user_de/*/*/cache/* /data/user_de/*/*/code_cache/*
+PATH=/vendor/bin:$PATH
 
-# Enable ZRAM on devices with 2GB RAM
-if [ "$(awk '($1 == "MemTotal:") {print $2}' /proc/meminfo)" -lt 2097152 ]; then
-    echo "1G" >/sys/block/zram0/disksize
-    mkswap /dev/block/zram0
-    swapon /dev/block/zram0
+# Memory Tuning
+# no need to reserve memory for these
+echo 0 > /proc/sys/vm/admin_reserve_kbytes
+echo 0 > /proc/sys/vm/user_reserve_kbytes
+
+# make sure zram is enabled
+# sometimes it fails especially on crdroid?
+if ! grep "zram" /proc/swaps > /dev/null 2>&1; then 
+	mkswap /dev/block/zram0 > /dev/null 2>&1
+	swapon /dev/block/zram0 > /dev/null 2>&1
 fi
+
+# tune if zram is up
+if grep "zram" /proc/swaps > /dev/null 2>&1; then 
+	# zram tweak
+	echo 200 > /proc/sys/vm/swappiness
+	echo 0 > /proc/sys/vm/page-cluster
+
+	# le9ec
+	echo 131072 > /proc/sys/vm/anon_min_kbytes
+	echo 0 > /proc/sys/vm/clean_min_kbytes
+	echo 131072 > /proc/sys/vm/clean_low_kbytes
+
+fi
+
+# EOF
