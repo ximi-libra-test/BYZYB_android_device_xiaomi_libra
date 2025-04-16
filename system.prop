@@ -92,6 +92,13 @@ mm.enable.qcom_parser=3379827
 mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 
+# Memory Management
+# NOTE: we have le9 on kernel
+ro.config.low_ram=true 
+ro.lmk.use_minfree_levels=true 
+ro.lmk.kill_timeout_ms=100 
+ro.lmk.swap_util_max=90
+
 # Network
 persist.data.mode=concurrent
 persist.data.netmgrd.qos.enable=true
