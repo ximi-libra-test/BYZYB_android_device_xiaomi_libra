@@ -122,6 +122,13 @@ TARGET_KERNEL_OPTIONAL_LD := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := external
+
+# use external clang
+# you can even use a clang 21 toolchain here
+TARGET_KERNEL_CLANG_PATH := /tmp/optane/clang
+
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TARGET_PROVIDES_KEYMASTER := true
