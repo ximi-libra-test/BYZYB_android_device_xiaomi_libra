@@ -186,6 +186,7 @@ VENDOR_SECURITY_PATCH := 2018-03-01
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 include device/qcom/sepolicy-legacy/sepolicy.mk
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Shims
 TARGET_LD_SHIM_LIBS += /system/vendor/lib/hw/camera.vendor.msm8992.so|libshim_camera.so:/system/vendor/lib/libmmcamera2_stats_algorithm.so|libshim_atomic.so:/system/vendor/lib64/libizat_core.so|libshim_get_process_name.so:/system/vendor/lib64/libril-qc-qmi-1.so|libshim_audioclient.so:/system/vendor/lib64/libril-qc-qmi-1.so|libshim_rild_socket.so:/system/vendor/lib/libmm-abl.so|libshims_powermanager.so:/system/vendor/lib64/libmm-abl.so|libshims_powermanager.so
