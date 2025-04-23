@@ -127,7 +127,7 @@
         <item>"/system/framework/oat/arm64/services.vdex"</item>
         <item>"/system/framework/services.jar.prof"</item>
         <item>"/system/framework/services.jar"</item>
-        <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
+        <item>"/system_ext/priv-app/SystemUIGo/SystemUIGo.apk"</item>
         <item>"/system/bin/surfaceflinger"</item>
     </string-array>
     <!-- Should the pinner service pin the Home application? -->
