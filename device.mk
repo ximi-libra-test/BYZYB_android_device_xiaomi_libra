@@ -267,6 +267,10 @@ PRODUCT_PACKAGES += \
     libshim_rild_socket \
     libxml2
 
+# SystemUI module for Android Go
+PRODUCT_PACKAGES += \
+    SystemUIGo
+
 # Seccomp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
