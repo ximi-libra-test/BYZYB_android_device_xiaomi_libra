@@ -2,7 +2,7 @@
 ro.charger.enable_suspend=true
 
 # Special persist properties
-persist.sys.cpu_overclock=false
+persist.sys.cpu_overclock=true
 persist.vendor.edge_touch_mode=false
 
 # Bluetooth
