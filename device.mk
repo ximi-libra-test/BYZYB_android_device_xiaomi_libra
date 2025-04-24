@@ -190,6 +190,10 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += android.hardware.light@2.0-service.xiaomi_msm8994
 
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     libshims_powermanager \

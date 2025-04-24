@@ -699,3 +699,6 @@ firmware_directories /vendor/modem_firmware/image/
 
 # Add device block for FRP
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/config    0600   system     system
+
+# Charger
+/sys/class/power_supply/battery  charging_enabled    0660    system  system
