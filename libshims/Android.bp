@@ -24,6 +24,7 @@ cc_library_shared {
     name: "libshim_atomic",
     proprietary: true,
     srcs: ["atomic.cpp"],
+    shared_libs: ["libcutils"],
 }
 
 cc_library_shared {
