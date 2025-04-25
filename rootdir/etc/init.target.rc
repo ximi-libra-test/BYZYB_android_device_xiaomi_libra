@@ -188,3 +188,8 @@ on property:sys.boot_completed=1
     write /sys/class/devfreq/qcom,cpubw.27/governor bw_hwmon
     write /sys/class/devfreq/qcom,mincpubw.28/governor cpufreq
     write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 7
+    
+    # enable DT2W
+    write /proc/touchscreen/double_tap_enable 1
+    # fix screen idling
+    write /sys/devices/virtual/graphics/fb0/idle_time 100
