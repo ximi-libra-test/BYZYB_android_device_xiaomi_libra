@@ -99,6 +99,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true \
     mmp.enable.3g2=true
 
+# Memory Management
+# from Android Go
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.critical_upgrade=true \
+    ro.lmk.upgrade_pressure=40 \
+    ro.lmk.downgrade_pressure=60 \
+    ro.lmk.kill_heaviest_task=false \
+    ro.statsd.enable=true \
+    pm.dexopt.shared=quicken \
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapsize=256m \
+    dalvik.vm.madvise-random=true
+
 # Network
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.mode=concurrent \
