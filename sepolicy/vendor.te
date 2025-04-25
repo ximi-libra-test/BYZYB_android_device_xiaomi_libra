@@ -55,3 +55,6 @@ allow timekeep_app sysfs_rtc:dir { search };
 allow timekeep_app time_data_file:dir create_dir_perms;
 allow timekeep_app time_data_file:file create_file_perms;
 dontaudit timekeep_app app_data_file:dir { getattr search };
+
+# Define sysfs_disk_stat
+type sysfs_disk_stat, fs_type, sysfs_type;
