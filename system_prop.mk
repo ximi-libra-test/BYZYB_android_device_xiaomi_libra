@@ -99,6 +99,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true \
     mmp.enable.3g2=true
 
+# Memory Management
+# from Android Go and init/init_libra.cpp (phone-xhdpi-2048-dalvik-heap.mk)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.kill_heaviest_task=false \
+    ro.lmk.critical_upgrade=true \
+    ro.lmk.upgrade_pressure=40 \
+    ro.lmk.downgrade_pressure=60 \
+    ro.statsd.enable=true \
+    pm.dexopt.shared=quicken \
+    dalvik.vm.madvise-random=true \
+    dalvik.vm.heapsize=256m \
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapmaxfree=8m \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heaptargetutilization=0.75
+
 # Network
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.mode=concurrent \
