@@ -13,6 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Android Go Properties, cherry picked.
+# kanged from build/make/target/product/go_defaults.mk
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+PRODUCT_DISABLE_SCUDO := true
+TARGET_VNDK_USE_CORE_VARIANT := true
+
 # AAPT
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 

@@ -92,11 +92,18 @@ mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 
 # Memory Management
-# NOTE: we have le9 on kernel
-ro.config.low_ram=true 
-ro.lmk.use_minfree_levels=true 
-ro.lmk.kill_timeout_ms=100 
-ro.lmk.swap_util_max=90
+# from Android Go
+ro.lmk.critical_upgrade=true
+ro.lmk.upgrade_pressure=40
+ro.lmk.downgrade_pressure=60
+ro.lmk.kill_heaviest_task=false
+ro.statsd.enable=true
+pm.dexopt.downgrade_after_inactive_days=10
+pm.dexopt.shared=quicken
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heapsize=256m
+dalvik.vm.madvise-random=true
+
 
 # Network
 persist.data.mode=concurrent
