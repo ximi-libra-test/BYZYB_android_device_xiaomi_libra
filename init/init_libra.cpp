@@ -85,11 +85,6 @@ void vendor_load_properties()
         property_override("ro.vendor.product.device", "aqua");
         property_override("ro.vendor.product.model", "Mi-4s");
 
-        // Set fingerprint properties
-        property_override("ro.frp.pst", "/dev/block/bootdevice/by-name/config");
-        property_override("ro.hardware.fingerprint", "fpc");
-        property_override("sys.fpc.tu.disabled", "0");
-
         break;
     }
     }
