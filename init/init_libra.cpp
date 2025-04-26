@@ -29,7 +29,6 @@
 #define AQUA_BOARD_ID 30
 #define BOARD_ID_PATH "/proc/device-tree/qcom,board-id"
 #define LIBRA_BOARD_ID 12
-#define RAM_SIZE_2GB 2048ull * 1024 * 1024
 
 #include <fstream>
 #include <sys/_system_properties.h>
@@ -73,17 +72,6 @@ void vendor_load_properties()
     {
         struct sysinfo sys;
         sysinfo(&sys);
-
-        // Set memory properties for Mi-4c with 2GB RAM (values from phone-xhdpi-2048-dalvik-heap.mk)
-        if (sys.totalram <= RAM_SIZE_2GB)
-        {
-            property_override("dalvik.vm.heapgrowthlimit", "192m");
-            property_override("dalvik.vm.heapmaxfree", "8m");
-            property_override("dalvik.vm.heapminfree", "512k");
-            property_override("dalvik.vm.heapsize", "512m");
-            property_override("dalvik.vm.heapstartsize", "8m");
-            property_override("dalvik.vm.heaptargetutilization", "0.75");
-        }
 
         break;
     }
