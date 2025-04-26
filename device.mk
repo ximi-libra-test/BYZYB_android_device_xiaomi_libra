@@ -304,7 +304,6 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml \
     ipacm-diag \
-    libqsap_sdk \
     libwpa_client \
     readmac \
     wpa_supplicant \
