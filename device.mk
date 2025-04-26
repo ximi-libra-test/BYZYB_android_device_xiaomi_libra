@@ -291,7 +291,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     ipacm \
     IPACM_cfg.xml \
-    libqsap_sdk \
     libwpa_client \
     readmac \
     wpa_supplicant \
