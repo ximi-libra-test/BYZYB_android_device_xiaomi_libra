@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<project name="ximi-libra-test/android_device_xiaomi_libra" path="device/xiaomi/libra" revision="lineage-21-rev" remote="github" />
+<project name="ximi-libra-test/android_vendor_xiaomi_libra" path="vendor/xiaomi/libra" revision="lineage-20" remote="github" />
+
+<!-- msm8992 stuff
+<project name="LineageOS/android_hardware_qcom_audio" path="hardware/qcom-caf/msm8994/audio" revision="lineage-20.0-caf-msm8994" remote="github" />
+<project name="LineageOS-UL/android_hardware_qcom_display" path="hardware/qcom-caf/msm8994/display" revision="lineage-20.0-caf-msm8994" remote="github" />
+<project name="LineageOS/android_hardware_qcom_media" path="hardware/qcom-caf/msm8994/media" revision="lineage-20.0-caf-msm8994" remote="github" />
+ -->
+
+
+<!-- dont need macos stuff -->
+<remove-project path="prebuilts/bazel/darwin-x86_64" />
+<remove-project path="prebuilts/clang/host/darwin-x86" />
+<remove-project path="prebuilts/go/darwin-x86" />
+
+
+<!-- replace with the one from pckotzer/aoleary's -->
+<remove-project path="hardware/qcom-caf/msm8994/audio" />
+<remove-project path="hardware/qcom-caf/msm8994/display" />
+<remove-project path="hardware/qcom-caf/msm8994/media" />
+<project name="ximi-libra-test/qcom-caf-msm8994" path="hardware/qcom-caf/msm8994" revision="14.0" remote="github" />
+
+<!-- module libwifi-hal missing dependencies: libwifi-hal-qcom 
+<remove-project path="frameworks/opt/net/wifi" />
+<project path="frameworks/opt/net/wifi" name="ximi-libra-test/android_frameworks_opt_net_wifi" revision="lineage-21.0" remote="github" />
+-->
+
+
+</manifest>
+
+
