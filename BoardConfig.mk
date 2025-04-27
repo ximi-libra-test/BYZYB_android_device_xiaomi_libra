@@ -14,6 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# allow missing deps
+ALLOW_MISSING_DEPENDENCIES := true
+
 DEVICE_PATH := device/xiaomi/libra
 
 # We copy prebuilt binaries and libs instead of packaging them
