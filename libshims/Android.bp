@@ -15,39 +15,45 @@
 
 cc_library_shared {
     name: "libshim_audioclient",
-    proprietary: true,
+    proprietary: false,
+    vendor: false,
     shared_libs: ["libaudioclient"],
     srcs: ["audioclient.cpp"],
 }
 
 cc_library_shared {
     name: "libshim_atomic",
-    proprietary: true,
+    proprietary: false,
+    vendor: false,
     srcs: ["atomic.cpp"],
     shared_libs: ["libcutils"],
 }
 
 cc_library_shared {
     name: "libshim_camera",
-    proprietary: true,
+    proprietary: false,
+    vendor: false,
     srcs: ["fence.cpp"],
 }
 
 cc_library_shared {
     name: "libshim_get_process_name",
-    proprietary: true,
+    proprietary: false,
+    vendor: false,
     srcs: ["get_process_name.c"],
 }
 
 cc_library_shared {
     name: "libshims_powermanager",
-    proprietary: true,
+    proprietary: false,
+    vendor: false,
     srcs: ["powermanager.c"],
     shared_libs: ["libpowermanager"],
 }
 
 cc_library_shared {
     name: "libshim_rild_socket",
-    proprietary: true,
+    proprietary: false,
+    vendor: false,
     srcs: ["rild_socket.c"],
 }

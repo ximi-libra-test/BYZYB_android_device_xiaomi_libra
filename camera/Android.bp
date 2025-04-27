@@ -20,7 +20,8 @@ cc_library_shared {
         "system/media/camera/include",
     ],
     name: "camera.msm8992",
-    proprietary: true,
+    proprietary: false,
+    vendor: false,
     relative_install_path: "hw",
     compile_multilib: "32",
     shared_libs: [
