@@ -14,9 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# flag as android go
-PRODUCT_TYPE := go
-
 DEVICE_PATH := device/xiaomi/libra
 
 # We copy prebuilt binaries and libs instead of packaging them

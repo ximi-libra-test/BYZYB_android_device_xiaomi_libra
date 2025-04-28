@@ -13,9 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# use android go properties
-$(call inherit-product, build/make/target/product/go_defaults.mk)
-
 # AAPT
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
