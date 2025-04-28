@@ -2,12 +2,10 @@
   {
     "repository": "android_kernel_xiaomi_libra",
     "target_path": "kernel/xiaomi/libra",
-    "revision":"master"
   },
   {
     "repository": "android_vendor_xiaomi_libra",
     "target_path": "vendor/xiaomi/libra",
-    "revision":"lineage-16.0"
   },
   {
     "repository": "android_hardware_sony_timekeep",
