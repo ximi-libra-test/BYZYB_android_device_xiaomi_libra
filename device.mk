@@ -30,6 +30,13 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # APEX
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/ld.config.txt:system/etc/swcodec/ld.config.txt
 
+# ART Debugging (Disable)
+USE_DEX2OAT_DEBUG := false
+ART_BUILD_TARGET_NDEBUG := true
+ART_BUILD_TARGET_DEBUG := false
+ART_BUILD_HOST_NDEBUG := true
+ART_BUILD_HOST_DEBUG := false
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/etc/aanc_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/aanc_tuning_mixer.txt \
