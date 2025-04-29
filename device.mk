@@ -209,6 +209,17 @@ PRODUCT_PACKAGES += android.hardware.light@2.0-service.xiaomi_msm8994
 # LiveDisplay
 PRODUCT_PACKAGES += vendor.lineage.livedisplay@2.0-service-sysfs
 
+# Low ram things from clo
+TARGET_HAS_LOW_RAM := true
+# Enable DM file preopting to reduce first boot time
+PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
+DONT_UNCOMPRESS_PRIV_APPS_DEXS := true
+# Reduces GC frequency of foreground apps by 50%
+PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.foreground-heap-growth-multiplier=2.0
+# Disable per_app memcg
+PRODUCT_PROPERTY_OVERRIDES += ro.config.per_app_memcg=false
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
