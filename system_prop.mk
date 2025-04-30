@@ -87,6 +87,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=bfq
 
+# Incremental FS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.incremental.enable=yes
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     av.debug.disable.pers.cache=true \
