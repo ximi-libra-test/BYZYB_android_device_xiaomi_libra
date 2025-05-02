@@ -61,7 +61,6 @@ QCOM_BT_USE_SMD_TTY := true
 WCNSS_FILTER_USES_SIBS := true
 
 # Camera
-TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := /system/vendor/bin/mm-qcamera-daemon=22
 USE_DEVICE_SPECIFIC_CAMERA := true
 
