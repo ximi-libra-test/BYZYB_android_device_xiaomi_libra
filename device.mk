@@ -88,6 +88,10 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     services-ext
 
+# Display Device Config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/displayconfig/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
+
 # Fingerprint
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
