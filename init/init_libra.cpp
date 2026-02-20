@@ -66,6 +66,10 @@ void property_override(const char *prop, const char *value)
 
 void vendor_load_properties()
 {
+
+    const char* board_fp = nullptr;
+    const char* board_desc = nullptr;
+
     switch (get_board_id(BOARD_ID_PATH))
     {
     case LIBRA_BOARD_ID:
@@ -73,11 +77,25 @@ void vendor_load_properties()
         struct sysinfo sys;
         sysinfo(&sys);
 
+	// override for libra
+	board_fp = "Xiaomi/libra/libra:7.0/NRD90M/V10.1.1.0.NXKCNFI:user/release-keys";
+        board_desc = "libra-user 7.0 NRD90M V10.1.1.0.NXKCNFI release-keys";
+
+        property_override("ro.product.model", "Mi-4c");
+        property_override("ro.product.device", "libra");
+        property_override("ro.vendor.product.device", "libra");
+        property_override("ro.vendor.product.model", "Mi-4c");
+
         break;
     }
 
     case AQUA_BOARD_ID:
     {
+
+	// override for aqua
+	board_fp = "Xiaomi/aqua/aqua:7.0/NRD90M/V10.1.1.0.NAJCNFI:user/release-keys";
+        board_desc = "aqua-user 7.0 NRD90M V10.1.1.0.NAJCNFI release-keys";
+
         // Set device info for Mi-4s
         property_override("ro.build.product", "aqua");
         property_override("ro.product.device", "aqua");
@@ -93,6 +111,16 @@ void vendor_load_properties()
         break;
     }
     }
+
+    property_override("ro.build.description", board_desc);
+    property_override("ro.build.fingerprint", board_fp);
+
+    property_override("ro.bootimage.build.fingerprint", board_fp);
+    property_override("ro.odm.build.fingerprint", board_fp);
+    property_override("ro.system.build.fingerprint", board_fp);
+    property_override("ro.system_ext.build.fingerprint", board_fp);
+    property_override("ro.vendor.build.fingerprint", board_fp);
+    property_override("ro.vendor_dlkm.build.fingerprint", board_fp);
 
     // Hide sensitive IMEI and MEID properties
     property_override("ro.ril.oem.imei", "");
