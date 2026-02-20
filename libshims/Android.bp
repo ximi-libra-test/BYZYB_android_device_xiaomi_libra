@@ -15,7 +15,6 @@
 
 cc_library_shared {
     name: "libshim_audioclient",
-    proprietary: true,
     shared_libs: ["libaudioclient"],
     srcs: ["audioclient.cpp"],
 }
@@ -41,7 +40,6 @@ cc_library_shared {
 
 cc_library_shared {
     name: "libshims_powermanager",
-    proprietary: true,
     srcs: ["powermanager.c"],
     shared_libs: ["libpowermanager"],
 }
