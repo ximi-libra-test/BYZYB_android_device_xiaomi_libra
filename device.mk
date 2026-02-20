@@ -38,6 +38,8 @@ ART_BUILD_HOST_NDEBUG := true
 ART_BUILD_HOST_DEBUG := false
 
 # Audio
+TARGET_EXCLUDES_AUDIOFX := true
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/etc/aanc_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/aanc_tuning_mixer.txt \
     $(LOCAL_PATH)/audio/etc/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
