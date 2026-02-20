@@ -21,4 +21,9 @@
     <dimen name="lock_icon_padding">32px</dimen>
     <!-- Blur radius behind Notification Shade -->
     <dimen name="max_shade_window_blur_radius">17dp</dimen>
+
+    <!-- remove statusbar paddings, no rounded corners -->
+    <dimen name="status_bar_padding_start">0dp</dimen>
+    <dimen name="status_bar_padding_end">0dp</dimen>
+
 </resources>
