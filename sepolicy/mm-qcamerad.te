@@ -1,0 +1,2 @@
+allow mm-qcamerad sysfs:{ dir file } *;
+allow mm-qcamerad camera_prop:file *;
