@@ -23,6 +23,15 @@ allow mmbn-daemon firmware_file:file r_file_perms;
 allow mmbn-daemon self:socket create_socket_perms;
 allowxperm mmbn-daemon self:socket ioctl msm_sock_ipc_ioctls;
 
+# HALs
+init_daemon_domain(hal_power_stats_default)
+hal_server_domain(hal_power_stats_default, hal_power)
+init_daemon_domain(hal_ir_default)
+hal_server_domain(hal_ir_default, hal_ir)
+init_daemon_domain(hal_light_default)
+hal_server_domain(hal_light_default, hal_light)
+type proc_touchpanel, fs_type, proc_type;
+
 # Readmac
 type readmac, domain;
 type readmac_exec, exec_type, vendor_file_type, file_type;
@@ -68,6 +77,7 @@ allow cnd self:capability { chown dac_override dac_read_search fsetid };
 
 #============= crash_dump ==============
 allow crash_dump init:process ptrace;
+allow crash_dump vold:process ptrace;
 
 #============= fidodaemon ==============
 allow fidodaemon servicemanager:binder call;
@@ -80,9 +90,25 @@ allow hal_graphics_composer_default persist_file:lnk_file read;
 #============= hal_health_default ==============
 allow hal_health_default sysfs:file { getattr open read };
 
+#============= hal_lineage_touch_default ==============
+allow hal_lineage_touch_default proc_touchpanel:dir search;
+allow hal_lineage_touch_default proc_touchpanel:file rw_file_perms;
+allow hal_lineage_touch_default sysfs:file { open write getattr };
+
+#============= hal_light_default ==============
+allow hal_light_default sysfs:file { open write getattr };
+
 #============= hal_power_default ==============
 allow hal_power_default sysfs:file write;
 allow hal_power_default sysfs:file open;
+
+#============= hal_power_stats_default ==============
+allow hal_power_stats_default sysfs:dir { open read getattr };
+allow hal_power_stats_default sysfs:file { open read getattr };
+
+#============= hal_wifi_default ==============
+allow hal_wifi_default proc_net:file write;
+allow hal_wifi_default vendor_tombstone_data_file:dir { open read search };
 
 #============= init ==============
 allow init hwservicemanager:binder { call transfer };
@@ -100,6 +126,7 @@ allow init sysfs_graphics:file { open write };
 
 #============= mediaserver ==============
 allow mediaserver camera_data_file:dir search;
+allow mediaserver sensorservice_service:service_manager find;
 
 #============= mm-qcamerad ==============
 allow mm-qcamerad camera_prop:file { read getattr open };
@@ -113,6 +140,9 @@ allow mmbn-daemon vfat:file { open read };
 
 #============= per_mgr ==============
 allow per_mgr self:capability net_raw;
+
+#============= platform_app ==============
+allow platform_app exported_camera_prop:file read;
 
 #============= qti_init_shell ==============
 allow qti_init_shell proc_swaps:file { getattr open read };
@@ -129,9 +159,8 @@ allow rild deviceid_prop:file { getattr open read };
 allow rild deviceid_prop:property_service set;
 allow rild system_prop:property_service set;
 
-
 #============= system_server ==============
-allow system_server exported_camera_prop:file read;
+allow system_server exported_camera_prop:file { read open getattr };
 allow system_server init:binder call;
 allow system_server userspace_reboot_exported_prop:file read;
 allow system_server iio_device:chr_file { read ioctl open };
