@@ -107,7 +107,7 @@ USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.selinux=permissive ehci-hcd.park=3 msm_rtb.filter=0x37
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.selinux=enforcing ehci-hcd.park=3 msm_rtb.filter=0x37
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_CLANG_COMPILE := true
