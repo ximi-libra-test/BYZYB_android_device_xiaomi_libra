@@ -55,3 +55,110 @@ allow timekeep_app sysfs_rtc:dir { search };
 allow timekeep_app time_data_file:dir create_dir_perms;
 allow timekeep_app time_data_file:file create_file_perms;
 dontaudit timekeep_app app_data_file:dir { getattr search };
+
+### audit2allow
+#============= bluetooth ==============
+allow bluetooth mnt_vendor_file:dir search;
+
+#============= bootanim ==============
+allow bootanim userspace_reboot_exported_prop:file { read getattr open };
+
+#============= cnd ==============
+allow cnd self:capability { chown dac_override dac_read_search fsetid };
+
+#============= crash_dump ==============
+allow crash_dump init:process ptrace;
+
+#============= fidodaemon ==============
+allow fidodaemon servicemanager:binder call;
+allow fidodaemon servicemanager:binder transfer;
+
+#============= hal_graphics_composer_default ==============
+allow hal_graphics_composer_default mnt_vendor_file:dir search;
+allow hal_graphics_composer_default persist_file:lnk_file read;
+
+#============= hal_health_default ==============
+allow hal_health_default sysfs:file { getattr open read };
+
+#============= hal_power_default ==============
+allow hal_power_default sysfs:file write;
+allow hal_power_default sysfs:file open;
+
+#============= init ==============
+allow init hwservicemanager:binder { call transfer };
+allow init mnt_vendor_file:dir mounton;
+allow init proc:file setattr;
+allow init self:socket { create ioctl read };
+allow init sysfs:file { open read setattr };
+allow init sysfs_rtc:file { open read };
+allow init vendor_file:file execute_no_trans;
+allow init qmuxd:unix_stream_socket connectto;
+allow init qmuxd_socket:sock_file write;
+allow init self:socket write;
+allow init sysfs:file write;
+allow init sysfs_graphics:file { open write };
+
+#============= mediaserver ==============
+allow mediaserver camera_data_file:dir search;
+
+#============= mm-qcamerad ==============
+allow mm-qcamerad camera_prop:file { read getattr open };
+
+#============= mmbn-daemon ==============
+allow mmbn-daemon self:capability { dac_override dac_read_search };
+allow mmbn-daemon vendor_file:file entrypoint;
+allow mmbn-daemon firmware_file:lnk_file read;
+allow mmbn-daemon vfat:dir search;
+allow mmbn-daemon vfat:file { open read };
+
+#============= per_mgr ==============
+allow per_mgr self:capability net_raw;
+
+#============= qti_init_shell ==============
+allow qti_init_shell proc_swaps:file { getattr open read };
+allow qti_init_shell vendor_file:file entrypoint;
+
+#============= rfs_access ==============
+allow rfs_access mnt_vendor_file:dir search;
+allow rfs_access persist_file:lnk_file read;
+allow rfs_access self:capability net_raw;
+
+#============= rild ==============
+allow rild self:capability { dac_override dac_read_search fowner sys_module };
+allow rild deviceid_prop:file { getattr open read };
+allow rild deviceid_prop:property_service set;
+allow rild system_prop:property_service set;
+
+
+#============= system_server ==============
+allow system_server exported_camera_prop:file read;
+allow system_server init:binder call;
+allow system_server userspace_reboot_exported_prop:file read;
+allow system_server iio_device:chr_file { read ioctl open };
+allow system_server mnt_vendor_file:dir search;
+allow system_server persist_file:file write;
+allow system_server userspace_reboot_config_prop:file { getattr open read };
+allow system_server userspace_reboot_exported_prop:file { getattr open };
+
+#============= tee ==============
+allow tee vfat:dir search;
+allow tee vfat:file { getattr open read };
+
+#============= ueventd ==============
+allow ueventd vfat:dir search;
+allow ueventd vfat:file { getattr open read };
+allow ueventd metadata_file:dir search;
+
+#============= vendor_init ==============
+allow vendor_init persist_file:lnk_file read;
+allow vendor_init proc:file write;
+allow vendor_init radio_data_file:file { open setattr write };
+allow vendor_init bluetooth_data_file:file setattr;
+
+#============= vold ==============
+allow vold sysfs_mmc_host:file write;
+
+#============= zygote ==============
+allow zygote bluetooth_prop:file { read getattr open };
+allow zygote proc:file { read open };
+
