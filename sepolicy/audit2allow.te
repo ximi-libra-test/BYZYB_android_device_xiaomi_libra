@@ -1,0 +1,94 @@
+#============= audioserver ==============
+allow audioserver zygote:binder call;
+
+#============= bootanim ==============
+allow bootanim userspace_reboot_exported_prop:file *;
+
+#============= crash_dump ==============
+allow crash_dump init:process ptrace;
+
+#============= hal_graphics_composer_default ==============
+allow hal_graphics_composer_default mnt_vendor_file:dir search;
+allow hal_graphics_composer_default persist_file:lnk_file read;
+
+#============= hal_health_default ==============
+allow hal_health_default sysfs:dir *;
+allow hal_health_default sysfs:file *;
+
+#============= hal_ir_default ==============
+allow hal_ir_default lirc_device:chr_file *;
+
+#============= hal_light_default ==============
+allow hal_light_default sysfs:dir *;
+allow hal_light_default sysfs:file *;
+
+#============= hal_lineage_touch_default ==============
+allow hal_lineage_touch_default sysfs:dir *;
+allow hal_lineage_touch_default sysfs:file *;
+
+#============= hal_power_stats_default ==============
+allow hal_power_stats_default sysfs:dir *;
+allow hal_power_stats_default sysfs:file *;
+
+#============= hwservicemanager ==============
+allow hwservicemanager zygote:binder transfer;
+
+#============= init ==============
+allow init hal_power_stats_hwservice:hwservice_manager { add find };
+allow init proc:file setattr;
+
+#============= mediaserver ==============
+allow mediaserver camera_data_file:dir search;
+allow mediaserver sensorservice_service:service_manager find;
+
+#============= netd ==============
+allow netd zygote:binder call;
+
+#============= priv_app ==============
+allow priv_app vr_manager_service:service_manager find;
+allow priv_app zygote:binder { call transfer };
+
+#============= qti_init_shell ==============
+allow qti_init_shell proc_swaps:file *;
+allow qti_init_shell vendor_file:file entrypoint;
+
+#============= readmac ==============
+allow readmac wifi_vendor_data_file:{ dir file } *;
+
+#============= rild ==============
+allow rild deviceid_prop:file *;
+allow rild deviceid_prop:property_service set;
+allow rild zygote:binder call;
+
+#============= statsd ==============
+allow statsd zygote:binder call;
+
+#============= surfaceflinger ==============
+allow surfaceflinger zygote:binder transfer;
+
+#============= system_app ==============
+allow system_app sysfs_zram:{ dir file } *;
+
+#============= system_server ==============
+allow system_server userspace_reboot_config_prop:file *;
+allow system_server userspace_reboot_exported_prop:file *;
+allow system_server exported_camera_prop:file *;
+allow system_server zygote:binder { call transfer };
+allow system_server zygote:process { getpgid getsched setsched };
+
+#============= ueventd ==============
+allow ueventd metadata_file:dir *;
+allow ueventd metadata_file:file *;
+
+#============= untrusted_app ==============
+allow untrusted_app zygote:binder { call transfer };
+
+#============= untrusted_app_29 ==============
+allow untrusted_app_29 zygote:binder { call transfer };
+
+#============= vold ==============
+allow vold sysfs_mmc_host:file write;
+
+#============= zygote ==============
+allow zygote bluetooth_prop:file read;
+
