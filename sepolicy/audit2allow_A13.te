@@ -1,0 +1,145 @@
+#============= adbd ==============
+allow adbd vendor_file:file r_file_perms;
+allow adbd functionfs:dir *;
+allow adbd functionfs:file *;
+allow adbd shell_prop:property_service set;
+allow adbd system_prop:property_service set;
+allow adbd default_prop:property_service set;
+
+allow init sysfs:file { rw_file_perms setattr };
+allow vendor_init sysfs:file { rw_file_perms setattr };
+
+#============= apexd ==============
+allow apexd vendor_file:file r_file_perms;
+
+#============= audioserver ==============
+allow audioserver vendor_default_prop:file *;
+
+#============= bdaddr ==============
+allow bdaddr default_prop:file *;
+
+#============= bluetooth ==============
+allow bluetooth mnt_vendor_file:dir search;
+allow bluetooth vendor_default_prop:file { getattr open };
+
+#============= bootanim ==============
+allow bootanim adb_data_file:dir search;
+allow bootanim device:chr_file rw_file_perms;
+allow bootanim vendor_file:file rx_file_perms;
+
+#============= bootstat ==============
+allow bootstat vendor_file:file r_file_perms;
+
+#============= cnd ==============
+allow cnd default_prop:file *;
+allow cnd wifi_hal_prop:file *;
+
+#============= hal_audio_default ==============
+allow hal_audio_default audio_prop:file *;
+allow hal_audio_default default_prop:file *;
+
+#============= hal_graphics_allocator_default ==============
+allow hal_graphics_allocator_default default_prop:file *;
+
+#============= hal_graphics_composer_default ==============
+allow hal_graphics_composer_default bootanim_system_prop:file *;
+allow hal_graphics_composer_default default_prop:file *;
+allow hal_graphics_composer_default system_prop:file *;
+
+#============= hal_wifi_default ==============
+allow hal_wifi_default persist_vendor_debug_wifi_prop:file *;
+
+#============= location ==============
+allow location default_prop:file *;
+allow location wifi_hal_prop:file *;
+
+#============= mediacodec ==============
+allow mediacodec default_prop:file *;
+allow mediacodec default_android_vndservice:service_manager find;
+
+#============= mediaserver ==============
+allow mediaserver package_native_service:service_manager find;
+allow mediaserver adb_data_file:file { getattr read };
+allow mediaserver vendor_default_prop:file *;
+
+#============= mm-qcamerad ==============
+allow mm-qcamerad bootanim_system_prop:file *;
+allow mm-qcamerad default_prop:file *;
+
+#============= mmbn-daemon ==============
+allow mmbn-daemon default_prop:file *;
+allow mmbn-daemon radio_prop:file *;
+
+#============= msm_irqbalanced ==============
+allow msm_irqbalanced default_prop:file *;
+
+#============= netd ==============
+allow netd device:dir { open read };
+
+#============= netmgrd ==============
+allow netmgrd default_prop:file *;
+
+#============= platform_app ==============
+allow platform_app adb_data_file:dir search;
+allow platform_app adb_data_file:file *;
+
+#============= qmuxd ==============
+allow qmuxd default_prop:file *;
+allow qmuxd radio_prop:file *;
+
+#============= qti ==============
+allow qti default_prop:file *;
+
+#============= readmac ==============
+allow readmac default_prop:file *;
+
+#============= rild ==============
+allow rild default_prop:file *;
+allow rild radio_core_data_file:dir *;
+allow rild radio_core_data_file:file *;
+allow rild vendor_rild_libpath_prop:file *;
+
+#============= surfaceflinger ==============
+allow surfaceflinger vendor_default_prop:file *;
+
+#============= system_server ==============
+allow system_server adb_data_file:dir { getattr search };
+allow system_server adb_data_file:file *;
+allow system_server build_bootimage_prop:file *;
+allow system_server vendor_default_prop:file *;
+
+#============= ueventd ==============
+allow ueventd proc:file *;
+
+#============= untrusted_app ==============
+allow untrusted_app sysfs_zram:dir search;
+allow untrusted_app sysfs_zram:file *;
+
+#============= vendor_init ==============
+allow vendor_init apexd_prop:file read;
+allow vendor_init bluetooth_prop:file read;
+allow vendor_init default_prop:file read;
+allow vendor_init default_prop:property_service set;
+allow vendor_init deviceid_prop:property_service set;
+allow vendor_init proc_dirty:file write;
+allow vendor_init proc_dirty_ratio:file write;
+allow vendor_init radio_core_data_file:dir *;
+allow vendor_init radio_core_data_file:file *;
+allow vendor_init radio_prop:file read;
+allow vendor_init system_prop:file read;
+allow vendor_init system_prop:property_service set;
+allow vendor_init vendor_mpctl_prop:property_service set;
+# temp
+# permissive vendor_init;
+
+#============= vold ==============
+allow vold hal_bootctl_hwservice:hwservice_manager find;
+
+#============= wcnss_service ==============
+allow wcnss_service default_prop:file *;
+
+#============= zygote ==============
+allow zygote device:dir { add_name create open read setattr write };
+allow zygote proc:file { open read };
+allow zygote untrusted_app:process ptrace;
+

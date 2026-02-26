@@ -139,7 +139,6 @@ allow system_app msm_irqbalance_prop:{ file property_service} *;
 allow system_app msm_irqbl_sdm630_prop:{ file property_service} *;
 allow system_app net_dns_prop:{ file property_service} *;
 allow system_app netd_prop:{ file property_service} *;
-allow system_app netd_stable_secret_prop:{ file property_service} *;
 allow system_app netd:binder *;
 allow system_app nfc_nq_prop:{ file property_service} *;
 allow system_app opengles_prop:{ file property_service} *;
