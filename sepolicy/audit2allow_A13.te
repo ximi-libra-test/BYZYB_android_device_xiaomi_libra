@@ -19,8 +19,8 @@ allow audioserver vendor_default_prop:file *;
 allow bdaddr default_prop:file *;
 
 #============= bluetooth ==============
-allow bluetooth mnt_vendor_file:dir search;
-allow bluetooth vendor_default_prop:file { getattr open };
+allow bluetooth mnt_vendor_file:dir *;
+allow bluetooth vendor_default_prop:file *;
 
 #============= bootanim ==============
 allow bootanim adb_data_file:dir search;
@@ -129,6 +129,7 @@ allow vendor_init radio_prop:file read;
 allow vendor_init system_prop:file read;
 allow vendor_init system_prop:property_service set;
 allow vendor_init vendor_mpctl_prop:property_service set;
+allow vendor_init vendor_init_rc_prop:file *;
 # temp
 # permissive vendor_init;
 

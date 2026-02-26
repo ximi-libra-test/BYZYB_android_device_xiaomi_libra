@@ -8,3 +8,9 @@ ro.ril.oem.meid u:object_r:deviceid_prop:s0
 
 # TimeKeep
 persist.vendor.timeadjust u:object_r:vendor_timekeep_prop:s0
+
+# vendor props on init.rc
+init.svc.bdaddr			u:object_r:vendor_init_rc_prop:s0
+init.svc.media			u:object_r:vendor_init_rc_prop:s0
+init.svc.per_mgr		u:object_r:vendor_init_rc_prop:s0
+init.svc.servicemanager		u:object_r:vendor_init_rc_prop:s0
