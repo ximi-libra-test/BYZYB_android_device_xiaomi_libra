@@ -53,7 +53,6 @@ ro.sys.display.support=23
 
 # Graphics
 debug.cpurend.vsync=false
-debug.renderengine.backend=threaded
 debug.sf.disable_backpressure=1
 debug.sf.latch_unsignaled=1
 ro.opengles.version=196610
@@ -64,6 +63,13 @@ ro.surface_flinger.protected_contents=true
 persist.log.tag.OpenGLRenderer=S
 persist.sys.sf.disable_blurs=1
 ro.sf.blurs_are_expensive=1
+hwui.disable.vsync=true
+debug.gpurend.vsync=false
+debug.hwui.renderer=skiagl
+debug.renderengine.backend=skiaglthreaded
+renderthread.skia.reduceopstasksplitting=true
+persist.sys.use_dithering=0
+persist.sys.ui.hw=true
 
 # I/O scheduler
 sys.io.scheduler=bfq
@@ -89,14 +95,12 @@ mmp.enable.3g2=true
 ro.lmk.critical_upgrade=true
 ro.lmk.upgrade_pressure=40
 ro.lmk.downgrade_pressure=60
-ro.lmk.kill_heaviest_task=false
-ro.statsd.enable=true
-pm.dexopt.downgrade_after_inactive_days=10
+ro.lmk.kill_heaviest_task=true
+ro.lmk.per_app_memcg=false
 pm.dexopt.shared=quicken
 dalvik.vm.heapgrowthlimit=128m
 dalvik.vm.heapsize=256m
 dalvik.vm.madvise-random=true
-
 
 # Network
 persist.data.mode=concurrent
