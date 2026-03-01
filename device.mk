@@ -323,6 +323,7 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     libwpa_client \
     readmac \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
     
