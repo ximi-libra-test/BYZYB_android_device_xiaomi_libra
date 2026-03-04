@@ -1,13 +1,3 @@
-# ART
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    dalvik.vm.boot-dex2oat-threads=6 \
-    dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5  \
-    dalvik.vm.dex2oat-filter=everything  \
-    dalvik.vm.dex2oat-threads=6  \
-    dalvik.vm.dex2oat64.enabled=true  \
-    dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5  \
-    dalvik.vm.image-dex2oat-threads=6
-
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
