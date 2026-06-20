@@ -120,7 +120,7 @@ TARGET_KERNEL_CLANG_VERSION := external
 
 # use external clang
 # you can even use a clang 21 toolchain here
-TARGET_KERNEL_CLANG_PATH := /tmp/optane/clang
+TARGET_KERNEL_CLANG_PATH := /tmp/optane/clang/clang23
 
 # Kernel Clang Flags
 KERNEL_CC := CC=clang
