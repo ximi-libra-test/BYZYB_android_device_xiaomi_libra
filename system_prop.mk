@@ -59,6 +59,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.renderengine.backend=threaded \
     debug.sf.disable_backpressure=1 \
     debug.sf.latch_unsignaled=1 \
     ro.opengles.version=196610 \
@@ -69,13 +70,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.supports_background_blur=false \
     ro.surface_flinger.supports_blurs=false \
     persist.sys.sf.disable_blurs=1 \
-    ro.sf.blurs_are_expensive=1 \
-    debug.hwui.renderer=skiagl \
-    debug.renderengine.backend=skiaglthreaded \
-    renderthread.skia.reduceopstasksplitting=true \
-    persist.sys.use_dithering=0 \
-    persist.sys.ui.hw=true
-
+    ro.sf.blurs_are_expensive=1
 
 # I/O scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -101,8 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Memory Management
 # from Android Go and init/init_libra.cpp (phone-xhdpi-2048-dalvik-heap.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lmk.per_app_memcg=false \
-    ro.lmk.kill_heaviest_task=true \
+    ro.lmk.kill_heaviest_task=false \
     ro.lmk.critical_upgrade=true \
     ro.lmk.upgrade_pressure=40 \
     ro.lmk.downgrade_pressure=60 \
