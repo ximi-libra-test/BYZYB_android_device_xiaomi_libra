@@ -154,6 +154,14 @@ on property:init.svc.per_mgr=stopped
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
 
+on property:persist.sys.cpu_overclock=false
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1440000
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 1824000
+
+on property:persist.sys.cpu_overclock=true
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1632000
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 1920000
+
 on property:persist.vendor.edge_touch_mode=false
     write /proc/touchscreen/edge_touch_mode 0
 
