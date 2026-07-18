@@ -157,10 +157,12 @@ on property:init.svc.servicemanager=restarting
 on property:persist.sys.cpu_overclock=false
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1440000
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 1824000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 600000000
 
 on property:persist.sys.cpu_overclock=true
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1632000
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 1920000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 700000000
 
 on property:persist.vendor.edge_touch_mode=false
     write /proc/touchscreen/edge_touch_mode 0
